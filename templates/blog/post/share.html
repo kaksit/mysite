@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+    <div>
+        {{field.errore}}
+        <br>
+        {{field.label_tag}}
+        {{field}}
+   
+    </div>
+    {% endfor %}
+    <input  class="btn btn-primary"   type="submit" value="send Email">
+</form>
+{% endblock content %}
